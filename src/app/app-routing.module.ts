@@ -1,3 +1,5 @@
+import { RegistrationDetailsComponent } from './registration-details/registration-details.component';
+import { CruiseFormComponent } from './cruise-form/cruise-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './core/services/auth/auth-guard.service';
@@ -9,6 +11,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'page', component: PageComponent },
+  { path: 'cruise', component: CruiseFormComponent },
+  { path: 'registration-details', component: RegistrationDetailsComponent },
+
  
   { path: 'account', loadChildren: () => import('./module/account/account.module').then(m => m.AccountModule), canActivate: [AuthGuardService] },
   { path: 'cms', loadChildren: () => import('./module/cms/cms.module').then(m => m.CmsModule), canActivate: [AuthGuardService] },
